@@ -21,61 +21,23 @@ import {
 } from "lucide-react";
 
 const cars = [
-  {
-    name: "Maruti Suzuki Ertiga",
-    type: "Family Car",
-    seats: "7 Seats",
-    image: "/Ertiga.png",
-    description:
-      "Perfect for family trips, city travel and comfortable outstation journeys.",
-  },
-  {
-    name: "Force Urbania",
-    type: "Premium Traveller",
-    seats: "17 Seats",
-    image: "/Urbania1.png",
-    description:
-      "Spacious premium traveller for group tours, family functions and long trips.",
-  },
-  {
-    name: "Hyundai Aura",
-    type: "Premium Sedan",
-    seats: "5 Seats",
-    image: "/Aura.png",
-    description:
-      "Elegant and comfortable sedan for city travel, airport and outstation trips.",
-  },
-  {
-    name: "Premium SUV",
-    type: "Premium SUV",
-    seats: "7 Seats",
-    image: "/NewCar.png",
-    description:
-      "Comfortable and spacious SUV for family trips, outstation journeys and group travel.",
-  },
+  { name: "Swift Dzire", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Comfortable sedan for city travel, airport transfers and one-way journeys." },
+  { name: "Hyundai Aura", type: "Premium Sedan", seats: "5 Seats", image: "/Aura.png", description: "Elegant and comfortable sedan for city travel and outstation trips." },
+  { name: "Toyota Etios", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Reliable sedan for daily travel, family rides and long routes." },
+  { name: "Hyundai Xcent", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Practical and comfortable sedan for safe everyday travel." },
+  { name: "Maruti Suzuki Ertiga", type: "Family Car", seats: "7 Seats", image: "/Ertiga.png", description: "Perfect for family trips, city travel and comfortable outstation journeys." },
+  { name: "Kia Carens", type: "Family SUV", seats: "7 Seats", image: "/suv-vehicle.svg", description: "Spacious family vehicle for group travel and memorable road trips." },
+  { name: "Toyota Innova", type: "Large SUV", seats: "7 Seats", image: "/large-suv-vehicle.svg", description: "Premium comfort for family tours, business travel and long journeys." },
+  { name: "Toyota Innova Crysta", type: "Premium Large SUV", seats: "7 Seats", image: "/large-suv-vehicle.svg", description: "Luxury and extra comfort for important journeys and outstation travel." },
+  { name: "Force Urbania", type: "Premium Traveller", seats: "17 Seats", image: "/Urbania1.png", description: "Spacious premium traveller for group tours, family functions and long trips." },
+  { name: "Premium SUV", type: "Premium SUV", seats: "7 Seats", image: "/suv-vehicle.svg", description: "Comfortable and spacious SUV for family trips, outstation journeys and group travel." },
 ];
 
 const services = [
-  {
-    title: "Local Travel",
-    text: "Comfortable vehicles for everyday city travel.",
-    icon: MapPin,
-  },
-  {
-    title: "Outstation Trips",
-    text: "Reliable rides for long-distance journeys.",
-    icon: CarFront,
-  },
-  {
-    title: "Family Tours",
-    text: "Spacious vehicles for memorable vacations.",
-    icon: Users,
-  },
-  {
-    title: "Airport Transfers",
-    text: "Smooth pickup and drop service for airports.",
-    icon: Wind,
-  },
+  { title: "Local Travel", text: "Comfortable vehicles for everyday city travel.", icon: MapPin },
+  { title: "Outstation Trips", text: "Reliable rides for long-distance journeys.", icon: CarFront },
+  { title: "Family Tours", text: "Spacious vehicles for memorable vacations.", icon: Users },
+  { title: "Airport Transfers", text: "Smooth pickup and drop service for airports.", icon: Wind },
 ];
 
 /* ================= WHATSAPP ================= */
@@ -246,63 +208,21 @@ const Home = ({ showFares = true }) => {
       Premium WhatsApp Booking Message
     */
 
-    const whatsappMessage = `🚖✨ *NEW BOOKING RECEIVED*
-━━━━━━━━━━━━━━━━━━━━━━
+    const whatsappMessage = `🚖 *NEW LEAD RECEIVED — MAHAKAL TOURS & TRAVELS*
 
-🚘 *MAHAKAL TOURS & TRAVELS*
-_Your Journey, Our Responsibility._
+  👤 Name: ${name}
+  📞 Phone: ${phone}
+  📍 Pickup Location: ${pickup}
+  🏁 Drop / Destination: ${destination}
+  📅 Date: ${formattedDate}
+  ⏰ Time: ${formattedTime}
+  🚘 Vehicle: ${vehicle}
+  👥 Passengers: ${passengers}
+  🏷️ Service / Request: ${service}
+  ${message ? `📝 Additional Requirement: ${message}\n` : ""}
+  🌐 Source: mahakaltours website
 
-━━━━━━━━━━━━━━━━━━━━━━
-👤 *CUSTOMER DETAILS*
-━━━━━━━━━━━━━━━━━━━━━━
-
-👤 Name        : ${name}
-📞 Phone       : ${phone}
-
-━━━━━━━━━━━━━━━━━━━━━━
-🛣️ *JOURNEY DETAILS*
-━━━━━━━━━━━━━━━━━━━━━━
-
-📍 Pickup       : ${pickup}
-🏁 Destination  : ${destination}
-📅 Date         : ${formattedDate}
-⏰ Time         : ${formattedTime}
-
-━━━━━━━━━━━━━━━━━━━━━━
-🚘 *VEHICLE DETAILS*
-━━━━━━━━━━━━━━━━━━━━━━
-
-🚗 Vehicle      : ${vehicle}
-👥 Passengers   : ${passengers}
-🏷️ Service      : ${service}
-
-${
-  message
-    ? `━━━━━━━━━━━━━━━━━━━━━━
-📝 *ADDITIONAL REQUIREMENT*
-━━━━━━━━━━━━━━━━━━━━━━
-
-${message}
-
-`
-    : ""
-}━━━━━━━━━━━━━━━━━━━━━━
-✅ *DIRECT BOOKING REQUEST*
-━━━━━━━━━━━━━━━━━━━━━━
-
-Customer has requested a direct booking
-for the above trip and vehicle.
-
-📲 *Please contact the customer to confirm
-the booking and further details.*
-
-━━━━━━━━━━━━━━━━━━━━━━
-
-🌐 *Source:* Mahakal Tours & Travels Website
-
-🙏 Thank you for choosing
-🚖 *Mahakal Tours & Travels*
-_${"Your Journey, Our Responsibility."}_`;
+  ✅ Please contact the customer to confirm availability and final fare.`;
 
     sendWhatsApp(whatsappMessage);
 
@@ -331,7 +251,7 @@ _${"Your Journey, Our Responsibility."}_`;
           <div className="hero-content">
             <div className="hero-brand-lockup">
               <div className="hero-brand-image">
-                <img src="/mahakal-mark.svg" alt="Mahakal Tours and Travels logo" />
+                <img src="/mahakallogo1.png" alt="Mahakal Tours and Travels logo" />
               </div>
               <div className="hero-brand-copy">
                 <strong>Mahakal Tours</strong>
@@ -1003,7 +923,7 @@ _${"Your Journey, Our Responsibility."}_`;
         <div className="footer-inner">
           <div>
             <img
-              src="/mahakal-logo.svg"
+              src="/mahakallogo1.png"
               alt="Mahakal Tours and Travels"
               className="footer-logo"
             />

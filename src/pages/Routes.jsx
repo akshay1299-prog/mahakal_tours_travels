@@ -3,10 +3,16 @@ import { useSearchParams } from "react-router-dom";
 import { ArrowRight, CheckCircle2, MessageCircle, Phone, Users, Wind, X } from "lucide-react";
 
 const routeCars = [
-  { name: "Maruti Suzuki Ertiga", category: "SUV", type: "Family Car", seats: "7 Seats", image: "/Ertiga.png", description: "Spacious and comfortable for family trips and outstation journeys." },
-  { name: "Force Urbania", category: "Traveller", type: "Premium Traveller", seats: "17 Seats", image: "/Urbania1.png", description: "Premium group travel with generous space for long journeys." },
+  { name: "Swift Dzire", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Comfortable sedan for city travel, airport transfers and one-way journeys." },
   { name: "Hyundai Aura", category: "Sedan", type: "Premium Sedan", seats: "5 Seats", image: "/Aura.png", description: "Elegant sedan for city travel, airport transfers and outstation rides." },
-  { name: "Premium SUV", category: "SUV", type: "Premium SUV", seats: "7 Seats", image: "/NewCar.png", description: "A refined SUV for family travel, tours and comfortable road trips." },
+  { name: "Toyota Etios", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Reliable sedan for daily travel, family rides and long routes." },
+  { name: "Hyundai Xcent", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Practical and comfortable sedan for safe everyday travel." },
+  { name: "Maruti Suzuki Ertiga", category: "SUV", type: "Family Car", seats: "7 Seats", image: "/Ertiga.png", description: "Spacious and comfortable for family trips and outstation journeys." },
+  { name: "Kia Carens", category: "SUV", type: "Family SUV", seats: "7 Seats", image: "/suv-vehicle.svg", description: "Spacious family vehicle for group travel and memorable road trips." },
+  { name: "Toyota Innova", category: "Large SUV", type: "Large SUV", seats: "7 Seats", image: "/large-suv-vehicle.svg", description: "Premium comfort for family tours, business travel and long journeys." },
+  { name: "Toyota Innova Crysta", category: "Large SUV", type: "Premium Large SUV", seats: "7 Seats", image: "/large-suv-vehicle.svg", description: "Luxury and extra comfort for important journeys and outstation travel." },
+  { name: "Force Urbania", category: "Traveller", type: "Premium Traveller", seats: "17 Seats", image: "/Urbania1.png", description: "Premium group travel with generous space for long journeys." },
+  { name: "Premium SUV", category: "SUV", type: "Premium SUV", seats: "7 Seats", image: "/suv-vehicle.svg", description: "A refined SUV for family travel, tours and comfortable road trips." },
 ];
 
 const Routes = () => {
@@ -47,7 +53,21 @@ const Routes = () => {
   const submitBooking = (event) => {
     event.preventDefault();
 
-    const message = `*NEW CAB BOOKING REQUEST*\n\n*Mahakal Tours and Travels*\nYour Journey, Our Responsibility.\n\n*Customer Details*\nName: ${booking.name}\nPhone: ${booking.phone}\nPassengers: ${booking.passengers}\n\n*Trip Details*\nTrip type: ${trip}\nPickup: ${pickup || "To be confirmed"}\nDestination: ${destination || "To be confirmed"}\nDate: ${date || "To be confirmed"}\nPickup time: ${time || "To be confirmed"}\n\n*Vehicle*\n${selectedCar}\nService: ${booking.service}\n${booking.note ? `Additional requirement: ${booking.note}\n` : ""}\nPlease confirm availability and final fare for this booking.`;
+    const message = `🚖 *NEW LEAD RECEIVED — MAHAKAL TOURS & TRAVELS*
+
+👤 Name: ${booking.name}
+📞 Phone: ${booking.phone}
+📍 Pickup Location: ${pickup || "To be confirmed"}
+🏁 Drop / Destination: ${destination || "To be confirmed"}
+📅 Date: ${date || "To be confirmed"}
+⏰ Time: ${time || "To be confirmed"}
+🚘 Vehicle: ${selectedCar}
+👥 Passengers: ${booking.passengers}
+🏷️ Service / Request: ${booking.service}
+${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
+🌐 Source: mahakaltours website
+
+✅ Please contact the customer to confirm availability and final fare.`;
 
     window.open(`https://wa.me/917620611548?text=${encodeURIComponent(message)}`, "_blank");
     setShowBookingForm(false);
@@ -84,7 +104,7 @@ const Routes = () => {
             </div>
 
             <div className="cab-filters" role="tablist" aria-label="Filter available cabs">
-              {["All", "Sedan", "SUV", "Traveller"].map((filter) => (
+              {["All", "Sedan", "SUV", "Large SUV", "Traveller"].map((filter) => (
                 <button key={filter} type="button" className={activeFilter === filter ? "active" : ""} onClick={() => setActiveFilter(filter)} role="tab" aria-selected={activeFilter === filter}>
                   {filter === "All" ? "All vehicles" : filter}
                 </button>

@@ -26,7 +26,7 @@ Thank you.`
         <div className="nav-inner">
           <a href="#home" className="nav-brand" onClick={closeMenu}>
             <img
-              src="/mahakal-logo.svg"
+              src="/mahakallogo1.png"
               alt="Mahakal Tours and Travels"
               className="nav-logo"
             />
