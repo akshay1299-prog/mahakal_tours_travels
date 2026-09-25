@@ -3611,6 +3611,196 @@ body {
   padding-top: 76px;
 }
 
+.fleet-teaser-section {
+  padding-top: 76px;
+  padding-bottom: 76px;
+  background: #f1ede3;
+}
+
+.fleet-teaser-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.priority-packages {
+  padding: 30px;
+  border: 1px solid #dfd2b8;
+  border-radius: 20px;
+  background: #fffaf0;
+  box-shadow: 0 15px 32px rgba(53, 39, 8, 0.08);
+}
+
+.priority-packages-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.priority-packages-heading h2 {
+  margin-top: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.05;
+}
+
+.priority-packages-heading h2 span {
+  color: var(--gold-dark);
+}
+
+.priority-packages-heading p {
+  max-width: 600px;
+  margin-top: 10px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 13px;
+  border: 1px solid #dce9df;
+  border-radius: 999px;
+  background: #f5fbf6;
+  color: #297046;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.priority-package-grid {
+  margin-top: 25px;
+}
+
+.secondary-package-grid {
+  display: none;
+}
+
+.home-fare-teaser {
+  padding: 78px 20px;
+  background: #fff;
+}
+
+.home-fare-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.home-fare-heading h2 {
+  margin-top: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+}
+
+.home-fare-heading h2 span {
+  color: var(--gold-dark);
+}
+
+.home-fare-heading p {
+  max-width: 570px;
+  margin-top: 10px;
+  color: #777;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.home-fare-link {
+  flex: none;
+  border-color: #111;
+  color: #111;
+}
+
+.home-fare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.home-fare-card {
+  min-height: 175px;
+  padding: 23px;
+  border: 1px solid #e1d9ca;
+  border-radius: 16px;
+  background: #f8f5ed;
+  color: #171813;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 15px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home-fare-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(53, 39, 8, 0.1);
+}
+
+.home-fare-card.featured {
+  border-color: var(--gold);
+  background: #171813;
+  color: #fff;
+}
+
+.home-fare-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #171813;
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.home-fare-card.featured .home-fare-number {
+  background: var(--gold);
+  color: #171813;
+}
+
+.home-fare-card small {
+  color: var(--gold-dark);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+.home-fare-card.featured small {
+  color: var(--gold-light);
+}
+
+.home-fare-card h3 {
+  margin-top: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+
+.home-fare-card p {
+  margin-top: 8px;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.home-fare-card.featured p {
+  color: #aaa;
+}
+
+.home-fare-card > svg {
+  color: var(--gold-dark);
+}
+
+.home-fare-card.featured > svg {
+  color: var(--gold);
+}
+
 .cab-results-section {
   margin-bottom: 76px;
 }
@@ -3774,6 +3964,27 @@ body {
   flex-wrap: wrap;
   gap: 5px;
   margin-top: 17px;
+}
+
+.cab-result-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 17px;
+  padding-top: 12px;
+  border-top: 1px solid #eee9de;
+}
+
+.cab-result-price strong {
+  color: var(--gold-dark);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.cab-result-price small {
+  color: #888;
+  font-size: 9px;
+  font-weight: 700;
 }
 
 .cab-result-features span {
@@ -3955,6 +4166,50 @@ body {
 
   .routes-fares-section {
     padding-top: 58px;
+  }
+
+  .fleet-teaser-section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .home-fare-teaser {
+    padding: 58px 14px;
+  }
+
+  .home-fare-heading {
+    display: block;
+  }
+
+  .home-fare-link {
+    margin-top: 19px;
+  }
+
+  .home-fare-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .home-fare-card {
+    min-height: 145px;
+    padding: 18px;
+  }
+
+  .home-fare-card h3 {
+    font-size: 19px;
+  }
+
+  .priority-packages {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .priority-packages-heading {
+    display: block;
+  }
+
+  .priority-badge {
+    margin-top: 16px;
   }
 
   .cab-results-section {
@@ -4185,6 +4440,10 @@ body {
     margin-top: 16px;
   }
 
+  .cab-result-price {
+    margin-top: 14px;
+  }
+
   .cab-result-book {
     min-height: 46px;
     margin-top: 17px;
@@ -4364,6 +4623,13 @@ body {
   .route-search-form {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .route-search-field input {
+    height: 32px;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 16px;
   }
 
   .route-search-button {

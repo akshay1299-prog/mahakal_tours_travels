@@ -282,7 +282,7 @@ const Home = ({ showFares = true }) => {
                 <ArrowRight size={17} />
               </button>
 
-              <a href="#cars" className="hero-secondary">
+              <a href="/routes" className="hero-secondary">
                 Explore Our Cars
               </a>
             </div>
@@ -439,55 +439,49 @@ const Home = ({ showFares = true }) => {
 
       {/* ================= FLEET ================= */}
 
-      <section id="cars" className="section">
+      <section id="cars" className="section fleet-teaser-section">
         <div className="container">
           <div className="section-head">
             <div className="kicker">Our Fleet</div>
 
-            <h2>Choose Your Perfect Ride</h2>
+            <h2>Find the right ride for your journey.</h2>
 
             <p>
-              Real vehicles. Comfortable journeys. Reliable travel for every
-              occasion.
+              Explore our complete sedan, SUV, large SUV and traveller collection on the booking page.
             </p>
           </div>
 
-          <div className="fleet-grid">
-            {cars.map((car) => (
-              <article className="car-card" key={car.name}>
-                <div className="car-image">
-                  <img src={car.image} alt={car.name} />
+          <div className="fleet-teaser-actions">
+            <a className="hero-primary" href="/routes">
+              Explore all cars
+              <ArrowRight size={17} />
+            </a>
+          </div>
+        </div>
+      </section>
 
-                  <div className="car-badge">{car.type}</div>
+      <section className="home-fare-teaser">
+        <div className="container">
+          <div className="home-fare-heading">
+            <div>
+              <div className="kicker">Travel Options</div>
+              <h2>Simple plans. <span>Clear fares.</span></h2>
+              <p>Choose the trip style that suits your journey. Full route prices are available on our fares page.</p>
+            </div>
+            <a className="outline-btn home-fare-link" href="/routes">View all fares <ArrowRight size={16} /></a>
+          </div>
 
-                  <div className="seat-badge">
-                    <Users size={14} />
-                    {car.seats}
-                  </div>
-                </div>
-
-                <div className="car-body">
-                  <h3>{car.name}</h3>
-
-                  <p>{car.description}</p>
-
-                  <div className="car-footer">
-                    <span className="ac">
-                      <Wind size={16} />
-                      AC Available
-                    </span>
-
-                    <button
-                      className="car-book"
-                      onClick={() => bookCar(car)}
-                    >
-                      Book Now
-                      <ArrowRight size={13} />
-                    </button>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <div className="home-fare-grid">
+            <a className="home-fare-card" href="/routes">
+              <span className="home-fare-number">01</span>
+              <div><small>ONE WAY</small><h3>One Way Cab Fares</h3><p>Comfortable drops from Ahilyanagar to Pune, Mumbai, Nashik, Shirdi and more.</p></div>
+              <ArrowRight size={19} />
+            </a>
+            <a className="home-fare-card featured" href="/routes">
+              <span className="home-fare-number">02</span>
+              <div><small>ROUND TRIP & LOCAL</small><h3>Round Trip & Local Packages</h3><p>Sedan from ₹13/km, SUV from ₹15/km and Large SUV from ₹20/km.</p></div>
+              <ArrowRight size={19} />
+            </a>
           </div>
         </div>
       </section>

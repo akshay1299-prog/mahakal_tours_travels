@@ -3,16 +3,16 @@ import { useSearchParams } from "react-router-dom";
 import { ArrowRight, CheckCircle2, MessageCircle, Phone, Users, Wind, X } from "lucide-react";
 
 const routeCars = [
-  { name: "Swift Dzire", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Comfortable sedan for city travel, airport transfers and one-way journeys." },
-  { name: "Hyundai Aura", category: "Sedan", type: "Premium Sedan", seats: "5 Seats", image: "/Aura.png", description: "Elegant sedan for city travel, airport transfers and outstation rides." },
-  { name: "Toyota Etios", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Reliable sedan for daily travel, family rides and long routes." },
-  { name: "Hyundai Xcent", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", image: "/sedan-vehicle.svg", description: "Practical and comfortable sedan for safe everyday travel." },
-  { name: "Maruti Suzuki Ertiga", category: "SUV", type: "Family Car", seats: "7 Seats", image: "/Ertiga.png", description: "Spacious and comfortable for family trips and outstation journeys." },
-  { name: "Kia Carens", category: "SUV", type: "Family SUV", seats: "7 Seats", image: "/suv-vehicle.svg", description: "Spacious family vehicle for group travel and memorable road trips." },
-  { name: "Toyota Innova", category: "Large SUV", type: "Large SUV", seats: "7 Seats", image: "/large-suv-vehicle.svg", description: "Premium comfort for family tours, business travel and long journeys." },
-  { name: "Toyota Innova Crysta", category: "Large SUV", type: "Premium Large SUV", seats: "7 Seats", image: "/large-suv-vehicle.svg", description: "Luxury and extra comfort for important journeys and outstation travel." },
-  { name: "Force Urbania", category: "Traveller", type: "Premium Traveller", seats: "17 Seats", image: "/Urbania1.png", description: "Premium group travel with generous space for long journeys." },
-  { name: "Premium SUV", category: "SUV", type: "Premium SUV", seats: "7 Seats", image: "/suv-vehicle.svg", description: "A refined SUV for family travel, tours and comfortable road trips." },
+  { name: "Swift Dzire", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", price: "₹13", priceNote: "per km", image: "/sedan-vehicle.svg", description: "Comfortable sedan for city travel, airport transfers and one-way journeys." },
+  { name: "Hyundai Aura", category: "Sedan", type: "Premium Sedan", seats: "5 Seats", price: "₹13", priceNote: "per km", image: "/Aura.png", description: "Elegant sedan for city travel, airport transfers and outstation rides." },
+  { name: "Toyota Etios", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", price: "₹13", priceNote: "per km", image: "/sedan-vehicle.svg", description: "Reliable sedan for daily travel, family rides and long routes." },
+  { name: "Hyundai Xcent", category: "Sedan", type: "Comfort Sedan", seats: "5 Seats", price: "₹13", priceNote: "per km", image: "/sedan-vehicle.svg", description: "Practical and comfortable sedan for safe everyday travel." },
+  { name: "Maruti Suzuki Ertiga", category: "SUV", type: "Family Car", seats: "7 Seats", price: "₹15", priceNote: "per km", image: "/Ertiga.png", description: "Spacious and comfortable for family trips and outstation journeys." },
+  { name: "Kia Carens", category: "SUV", type: "Family SUV", seats: "7 Seats", price: "₹15", priceNote: "per km", image: "/suv-vehicle.svg", description: "Spacious family vehicle for group travel and memorable road trips." },
+  { name: "Toyota Innova", category: "Large SUV", type: "Large SUV", seats: "7 Seats", price: "₹20", priceNote: "per km", image: "/large-suv-vehicle.svg", description: "Premium comfort for family tours, business travel and long journeys." },
+  { name: "Toyota Innova Crysta", category: "Large SUV", type: "Premium Large SUV", seats: "7 Seats", price: "₹20", priceNote: "per km", image: "/large-suv-vehicle.svg", description: "Luxury and extra comfort for important journeys and outstation travel." },
+  { name: "Force Urbania", category: "Traveller", type: "Premium Traveller", seats: "17 Seats", price: "On request", priceNote: "final quote", image: "/Urbania1.png", description: "Premium group travel with generous space for long journeys." },
+  { name: "Premium SUV", category: "SUV", type: "Premium SUV", seats: "7 Seats", price: "₹15", priceNote: "per km", image: "/suv-vehicle.svg", description: "A refined SUV for family travel, tours and comfortable road trips." },
 ];
 
 const Routes = () => {
@@ -93,6 +93,22 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
 
       <section className="cab-fares-section routes-fares-section">
         <div className="container">
+          <section className="priority-packages" aria-labelledby="priority-packages-title">
+            <div className="priority-packages-heading">
+              <div>
+                <div className="kicker">Most Popular Packages</div>
+                <h2 id="priority-packages-title">Start with a package that <span>fits your trip.</span></h2>
+                <p>Choose a clear round-trip or local package first, then select the vehicle that suits your group.</p>
+              </div>
+              <div className="priority-badge"><CheckCircle2 size={16} /> Best value for planned trips</div>
+            </div>
+            <div className="package-grid priority-package-grid">
+              <PackageCard label="SEDAN" title="Comfort Sedan" models="Swift Dzire • Hyundai Aura • Toyota Etios • Hyundai Xcent" price="₹13" details={["Toll / Parking extra", "₹500 per night halt", "₹300 driver allowance / day"]} onBook={bookRoute} />
+              <PackageCard featured label="SUV" title="Family SUV" models="Ertiga • Kia Carens" price="₹15" details={["Toll / Parking extra", "₹700 per night halt", "₹300 driver allowance / day"]} onBook={bookRoute} />
+              <PackageCard label="LARGE SUV" title="Premium Large SUV" models="Toyota Innova • Toyota Innova Crysta" price="₹20" details={["Toll / Parking extra", "₹1,000 per night halt", "₹300 driver allowance / day"]} onBook={bookRoute} />
+            </div>
+          </section>
+
           <section className="cab-results-section" aria-labelledby="available-cabs-title">
             <div className="cab-results-heading">
               <div>
@@ -115,7 +131,7 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
               {visibleCars.map((car) => (
                 <article className="cab-result-card" key={car.name}>
                   <div className="cab-result-image"><img src={car.image} alt={car.name} /><span>{car.type}</span></div>
-                  <div className="cab-result-body"><div className="cab-result-title"><div><h3>{car.name}</h3><p>{car.description}</p></div><span><Users size={13} />{car.seats}</span></div><div className="cab-result-features"><span><Wind size={13} />AC available</span><span>Clean vehicle</span><span>Verified driver</span></div><button className="cab-result-book" onClick={() => bookCar(car)}>Book this cab <ArrowRight size={15} /></button></div>
+                  <div className="cab-result-body"><div className="cab-result-title"><div><h3>{car.name}</h3><p>{car.description}</p></div><span><Users size={13} />{car.seats}</span></div><div className="cab-result-price"><strong>{car.price}</strong><small>{car.priceNote}</small></div><div className="cab-result-features"><span><Wind size={13} />AC available</span><span>Clean vehicle</span><span>Verified driver</span></div><button className="cab-result-book" onClick={() => bookCar(car)}>Book this cab <ArrowRight size={15} /></button></div>
                 </article>
               ))}
             </div>
@@ -147,7 +163,7 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
           <div className="fare-return-note"><ArrowRight size={17} /><div><strong>Return trips available</strong><span>Same route rates are applicable for return travel.</span></div></div>
 
           <div className="fare-block-heading round-trip-heading"><div><span>02</span><div><h3>Round Trip & Local Packages</h3><p>Ideal for sightseeing, family trips and multi-day travel.</p></div></div></div>
-          <div className="package-grid">
+          <div className="package-grid secondary-package-grid">
             <PackageCard label="SEDAN" title="Comfort Sedan" models="Swift Dzire • Hyundai Aura • Toyota Etios • Hyundai Xcent" price="₹13" details={["Toll / Parking extra", "₹500 per night halt", "₹300 driver allowance / day"]} onBook={bookRoute} />
             <PackageCard featured label="SUV" title="Family SUV" models="Ertiga • Kia Carens" price="₹15" details={["Toll / Parking extra", "₹700 per night halt", "₹300 driver allowance / day"]} onBook={bookRoute} />
             <PackageCard label="LARGE SUV" title="Premium Large SUV" models="Toyota Innova • Toyota Innova Crysta" price="₹20" details={["Toll / Parking extra", "₹1,000 per night halt", "₹300 driver allowance / day"]} onBook={bookRoute} />
