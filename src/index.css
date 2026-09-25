@@ -5285,6 +5285,14 @@ body {
   background: #f5f1e8;
 }
 
+.popular-routes-section + .route-search-section {
+  padding-top: 32px;
+}
+
+.popular-routes-section + .route-search-section .route-search-card {
+  margin-top: 0;
+}
+
 .popular-routes-inner {
   display: flex;
   align-items: center;
@@ -5396,6 +5404,10 @@ body {
 @media (max-width: 600px) {
   .popular-routes-section {
     padding: 0 14px 30px;
+  }
+
+  .popular-routes-section + .route-search-section {
+    padding-top: 22px;
   }
 
   .popular-routes-inner {

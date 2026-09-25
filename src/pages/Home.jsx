@@ -347,6 +347,35 @@ const Home = ({ showFares = true }) => {
         </div>
       </section>
 
+      <section className="popular-routes-section" aria-labelledby="popular-routes-title">
+        <div className="container popular-routes-inner">
+          <div className="popular-routes-copy">
+            <span className="kicker">Popular Routes</span>
+            <div className="popular-routes-title-row">
+              <h2 id="popular-routes-title">Start with a popular destination.</h2>
+              <button className="popular-return-button" type="button" onClick={exploreRoundTrip}>
+                <ArrowDownUp size={14} />
+                Round Trip
+              </button>
+            </div>
+          </div>
+          <div className="popular-routes-list">
+            {popularRoutes.map((destination) => (
+              <button
+                className="popular-route-card"
+                key={destination}
+                type="button"
+                onClick={() => explorePopularRoute(destination)}
+              >
+                <span>Ahilyanagar</span>
+                <ArrowRight size={14} aria-hidden="true" />
+                <strong>{destination}</strong>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="route-search-section" aria-label="Plan your journey">
         <div className="route-search-card">
           <div className="route-search-heading">
@@ -447,35 +476,6 @@ const Home = ({ showFares = true }) => {
               Explore cabs
             </button>
           </form>
-        </div>
-      </section>
-
-      <section className="popular-routes-section" aria-labelledby="popular-routes-title">
-        <div className="container popular-routes-inner">
-          <div className="popular-routes-copy">
-            <span className="kicker">Popular Routes</span>
-            <div className="popular-routes-title-row">
-              <h2 id="popular-routes-title">Start with a popular destination.</h2>
-              <button className="popular-return-button" type="button" onClick={exploreRoundTrip}>
-                <ArrowDownUp size={14} />
-                Round Trip
-              </button>
-            </div>
-          </div>
-          <div className="popular-routes-list">
-            {popularRoutes.map((destination) => (
-              <button
-                className="popular-route-card"
-                key={destination}
-                type="button"
-                onClick={() => explorePopularRoute(destination)}
-              >
-                <span>Ahilyanagar</span>
-                <ArrowRight size={14} aria-hidden="true" />
-                <strong>{destination}</strong>
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
