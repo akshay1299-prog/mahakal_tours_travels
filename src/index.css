@@ -82,7 +82,7 @@ img {
   color: #fff;
   display: grid;
   place-items: center;
-  animation: welcome-out 500ms ease 1.5s forwards;
+  animation: welcome-out 500ms ease 3.5s forwards;
 }
 
 .welcome-glow {
@@ -282,6 +282,16 @@ img {
   gap: 60px;
   align-items: center;
   padding: 60px 0 75px;
+}
+
+.hero-inner-simple {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-inner-simple .hero-content {
+  margin: 0 auto;
 }
 
 .eyebrow {
@@ -1498,10 +1508,12 @@ img {
 }
 
 .contact-link {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 13px;
   padding: 14px;
+  border: 1px solid transparent;
   background: #fff;
   border-radius: 16px;
   transition: 0.2s;
@@ -1521,6 +1533,33 @@ img {
   place-items: center;
 }
 
+.contact-yogesh {
+  border-color: rgba(181, 38, 45, 0.25);
+  background: linear-gradient(110deg, #fff, #fff5f3);
+}
+
+.contact-yogesh .contact-icon {
+  background: #b5262d;
+}
+
+.contact-rutik {
+  border-color: rgba(211, 161, 36, 0.3);
+  background: linear-gradient(110deg, #fff, #fffaf0);
+}
+
+.contact-rutik .contact-icon {
+  background: #c08b10;
+}
+
+.contact-avishkar {
+  border-color: rgba(38, 112, 70, 0.25);
+  background: linear-gradient(110deg, #fff, #f4fbf5);
+}
+
+.contact-avishkar .contact-icon {
+  background: #267046;
+}
+
 .contact-link.whatsapp .contact-icon {
   background: var(--whatsapp);
 }
@@ -1538,6 +1577,26 @@ img {
   display: block;
   margin-top: 3px;
   font-size: 14px;
+}
+
+.contact-link > div:nth-child(2) span {
+  display: block;
+  margin-top: 4px;
+  color: #777;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.contact-arrow {
+  margin-left: auto;
+  color: #aaa;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.contact-link:hover .contact-arrow {
+  color: var(--gold-dark);
+  transform: translateX(3px);
 }
 
 .contact-cta {

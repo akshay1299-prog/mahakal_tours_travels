@@ -81,15 +81,6 @@ const Home = ({ showFares = true }) => {
     setShowBookingForm(true);
   };
 
-  const bookCar = (car) => {
-    setBookingData((prev) => ({
-      ...prev,
-      vehicle: car.name,
-    }));
-
-    setShowBookingForm(true);
-  };
-
   const handleQuickSearchChange = (e) => {
     const { name, value } = e.target;
 
@@ -247,7 +238,7 @@ const Home = ({ showFares = true }) => {
       {/* ================= HERO ================= */}
 
       <section id="home" className="hero">
-        <div className="hero-inner">
+        <div className="hero-inner hero-inner-simple">
           <div className="hero-content">
             <div className="hero-brand-lockup">
               <div className="hero-brand-image">
@@ -305,29 +296,6 @@ const Home = ({ showFares = true }) => {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <div className="hero-photo">
-              <img
-                src="/Ertiga.png"
-                alt="Maruti Suzuki Ertiga - Mahakal Tours and Travels"
-              />
-
-              <div className="vehicle-card">
-                <div>
-                  <small>Featured Vehicle</small>
-                  <h3>Maruti Suzuki Ertiga</h3>
-                  <p>7 Seater • AC • Comfortable</p>
-                </div>
-
-                <button
-                  className="vehicle-book"
-                  onClick={() => bookCar(cars[0])}
-                >
-                  Book Now
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -831,43 +799,49 @@ const Home = ({ showFares = true }) => {
               </p>
 
               <div className="contact-list">
-                {/* RUTIK */}
-
-                <a href="tel:+917620611548" className="contact-link">
-                  <div className="contact-icon">
-                    <Phone size={19} />
-                  </div>
-
-                  <div>
-                    <small>Rutik Kakade</small>
-                    <strong>7620611548</strong>
-                  </div>
-                </a>
-
                 {/* YOGESH */}
 
-                <a href="tel:+919011776333" className="contact-link">
+                <a href="tel:+919011776333" className="contact-link contact-yogesh">
                   <div className="contact-icon">
                     <Phone size={19} />
                   </div>
 
                   <div>
-                    <small>Yogesh Repale</small>
-                    <strong>9011776333</strong>
+                    <small>Trip Coordinator</small>
+                    <strong>Yogesh Repale</strong>
+                    <span>9011776333</span>
                   </div>
+                  <ArrowRight size={16} className="contact-arrow" />
+                </a>
+
+                {/* RUTIK */}
+
+                <a href="tel:+917620611548" className="contact-link contact-rutik">
+                  <div className="contact-icon">
+                    <Phone size={19} />
+                  </div>
+
+                  <div>
+                    <small>Booking Support</small>
+                    <strong>Rutik Kakade</strong>
+                    <span>7620611548</span>
+                  </div>
+                  <ArrowRight size={16} className="contact-arrow" />
                 </a>
 
                 {/* AVISHKAR */}
 
-                <a href="tel:+919921823198" className="contact-link">
+                <a href="tel:+919921823198" className="contact-link contact-avishkar">
                   <div className="contact-icon">
                     <Phone size={19} />
                   </div>
 
                   <div>
-                    <small>Avishkar Phopase</small>
-                    <strong>9921823198</strong>
+                    <small>Travel Desk</small>
+                    <strong>Avishkar Phopase</strong>
+                    <span>9921823198</span>
                   </div>
+                  <ArrowRight size={16} className="contact-arrow" />
                 </a>
 
                 {/* DIRECT BOOKING */}

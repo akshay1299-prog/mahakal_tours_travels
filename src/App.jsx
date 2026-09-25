@@ -16,7 +16,7 @@ function App() {
     const welcomeTimer = window.setTimeout(() => {
       sessionStorage.setItem("mahakal-welcome-seen", "true");
       setShowWelcome(false);
-    }, 2000);
+    }, 4000);
 
     return () => window.clearTimeout(welcomeTimer);
   }, [showWelcome]);
