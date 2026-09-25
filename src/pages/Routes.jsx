@@ -109,6 +109,22 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
             </div>
           </section>
 
+          <section className="priority-route-fares" aria-labelledby="priority-route-fares-title">
+            <div className="priority-route-heading">
+              <div>
+                <div className="kicker">Popular One-Way Routes</div>
+                <h2 id="priority-route-fares-title">Your route. <span>Your fare.</span></h2>
+                <p>Popular one-way fares from Ahilyanagar, shown upfront before you choose a cab.</p>
+              </div>
+              <span className="fare-heading-note">Toll / parking extra</span>
+            </div>
+            <div className="priority-route-groups">
+              <RouteGroup title="Comfort Sedan" category="SEDAN · ₹13/km" models="Swift Dzire • Aura • Etios • Xcent" fares={[["Ahilyanagar → Pune", "₹2,200"], ["Ahilyanagar → Mumbai", "₹5,000"], ["Ahilyanagar → Nashik", "₹3,000"], ["Ahilyanagar → Sambhajinagar", "₹2,200"], ["Ahilyanagar → Shirdi", "₹2,200"]]} onBook={bookRoute} />
+              <RouteGroup title="Family SUV" category="SUV · ₹15/km" models="Ertiga • Kia Carens" fares={[["Ahilyanagar → Pune", "₹3,000"], ["Ahilyanagar → Mumbai", "₹6,000"], ["Ahilyanagar → Nashik", "₹4,000"], ["Ahilyanagar → Sambhajinagar", "₹3,000"], ["Ahilyanagar → Shirdi", "₹3,000"]]} onBook={bookRoute} />
+              <RouteGroup title="Premium Large SUV" category="LARGE SUV · ₹20/km" models="Innova • Innova Crysta" fares={[["Ahilyanagar → Pune", "₹6,000"], ["Ahilyanagar → Mumbai", "₹1,10,000"], ["Ahilyanagar → Nashik", "₹7,000"], ["Ahilyanagar → Sambhajinagar", "₹6,000"], ["Ahilyanagar → Shirdi", "₹6,000"]]} onBook={bookRoute} />
+            </div>
+          </section>
+
           <section className="cab-results-section" aria-labelledby="available-cabs-title">
             <div className="cab-results-heading">
               <div>
@@ -152,15 +168,15 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
             <div className="fare-category-card"><span className="fare-category-label">LARGE SUV</span><h3>Premium Large SUV</h3><p>Toyota Innova • Toyota Innova Crysta</p></div>
           </div>
 
-          <div className="fare-block-heading"><div><span>01</span><div><h3>One Way Cab Fares</h3><p>Popular routes from Ahilyanagar</p></div></div><span className="fare-heading-note">One-way drop</span></div>
+          <div className="fare-block-heading secondary-oneway-heading"><div><span>01</span><div><h3>One Way Cab Fares</h3><p>Popular routes from Ahilyanagar</p></div></div><span className="fare-heading-note">One-way drop</span></div>
 
-          <div className="fare-route-groups">
+          <div className="fare-route-groups secondary-oneway-groups">
             <RouteGroup title="Comfort Sedan" category="SEDAN" models="Swift Dzire • Aura • Etios • Xcent" fares={[["Ahilyanagar → Pune", "₹2,200"], ["Ahilyanagar → Mumbai", "₹5,000"], ["Ahilyanagar → Nashik", "₹3,000"], ["Ahilyanagar → Sambhajinagar", "₹2,200"], ["Ahilyanagar → Shirdi", "₹2,200"]]} onBook={bookRoute} />
             <RouteGroup title="Family SUV" category="SUV" models="Ertiga • Kia Carens" fares={[["Ahilyanagar → Pune", "₹3,000"], ["Ahilyanagar → Mumbai", "₹6,000"], ["Ahilyanagar → Nashik", "₹4,000"], ["Ahilyanagar → Sambhajinagar", "₹3,000"], ["Ahilyanagar → Shirdi", "₹3,000"]]} onBook={bookRoute} />
             <RouteGroup title="Premium Large SUV" category="LARGE SUV" models="Innova • Innova Crysta" fares={[["Ahilyanagar → Pune", "₹6,000"], ["Ahilyanagar → Mumbai", "₹1,10,000"], ["Ahilyanagar → Nashik", "₹7,000"], ["Ahilyanagar → Sambhajinagar", "₹6,000"], ["Ahilyanagar → Shirdi", "₹6,000"]]} onBook={bookRoute} />
           </div>
 
-          <div className="fare-return-note"><ArrowRight size={17} /><div><strong>Return trips available</strong><span>Same route rates are applicable for return travel.</span></div></div>
+          <div className="fare-return-note secondary-oneway-return"><ArrowRight size={17} /><div><strong>Return trips available</strong><span>Same route rates are applicable for return travel.</span></div></div>
 
           <div className="fare-block-heading round-trip-heading"><div><span>02</span><div><h3>Round Trip & Local Packages</h3><p>Ideal for sightseeing, family trips and multi-day travel.</p></div></div></div>
           <div className="package-grid secondary-package-grid">

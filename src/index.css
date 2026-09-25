@@ -3679,6 +3679,54 @@ body {
   display: none;
 }
 
+.secondary-oneway-heading,
+.secondary-oneway-groups,
+.secondary-oneway-return {
+  display: none;
+}
+
+.priority-route-fares {
+  margin-top: 25px;
+  padding: 28px 30px 30px;
+  border: 1px solid #d8cfbc;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(53, 39, 8, 0.06);
+}
+
+.priority-route-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.priority-route-heading h2 {
+  margin-top: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.05;
+}
+
+.priority-route-heading h2 span {
+  color: var(--gold-dark);
+}
+
+.priority-route-heading p {
+  max-width: 600px;
+  margin-top: 9px;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.priority-route-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
 .home-fare-teaser {
   padding: 78px 20px;
   background: #fff;
@@ -4202,6 +4250,25 @@ body {
   .priority-packages {
     padding: 20px 16px;
     border-radius: 16px;
+  }
+
+  .priority-route-fares {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .priority-route-heading {
+    display: block;
+  }
+
+  .priority-route-heading .fare-heading-note {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .priority-route-groups {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .priority-packages-heading {
