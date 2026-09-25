@@ -15,7 +15,7 @@ Please share the available vehicle options and booking details.
 Thank you.`
     );
 
-    window.open(`https://wa.me/917620611548?text=${message}`, "_blank");
+    window.open(`https://wa.me/919011776333?text=${message}`, "_blank");
   };
 
   const closeMenu = () => setMenuOpen(false);
@@ -41,7 +41,7 @@ Thank you.`
           </nav>
 
           <div className="nav-actions">
-            <a href="tel:+917620611548" className="call-btn">
+            <a href="tel:+919011776333" className="call-btn">
               <Phone size={16} />
               Call
             </a>
@@ -72,7 +72,7 @@ Thank you.`
             <a href="/#contact" onClick={closeMenu}>Contact</a>
 
             <div className="mobile-menu-actions">
-              <a href="tel:+917620611548" className="call-btn">
+              <a href="tel:+919011776333" className="call-btn">
                 <Phone size={17} />
                 Call
               </a>

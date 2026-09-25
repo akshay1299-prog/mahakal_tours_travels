@@ -37,7 +37,7 @@ const Routes = () => {
       `Hello Mahakal Tours and Travels,\n\nI would like to book ${route}. Please share the final fare and vehicle availability.`
     );
 
-    window.open(`https://wa.me/917620611548?text=${message}`, "_blank");
+    window.open(`https://wa.me/919011776333?text=${message}`, "_blank");
   };
 
   const bookCar = (car) => {
@@ -69,7 +69,7 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
 
 ✅ Please contact the customer to confirm availability and final fare.`;
 
-    window.open(`https://wa.me/917620611548?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/919011776333?text=${encodeURIComponent(message)}`, "_blank");
     setShowBookingForm(false);
     setBooking({ name: "", phone: "", passengers: "", service: "", note: "" });
   };
@@ -83,10 +83,13 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
             <h1>Clear fares for<br /><span>every journey.</span></h1>
             <p>Compare one-way routes, round-trip packages and Pune drops before you book.</p>
           </div>
-          <div className="routes-hero-card">
-            <CheckCircle2 size={20} />
-            <strong>Transparent pricing</strong>
-            <span>Final fare confirmed before every booking</span>
+          <div className="routes-hero-showcase" aria-label="Mahakal Tours vehicle showcase">
+            <div className="routes-hero-photo routes-hero-photo--large"><img src="/innova-premium-showcase.png" alt="Premium family SUV for Mahakal Tours journeys" /></div>
+            <div className="routes-hero-photo routes-hero-photo--small"><img src="/Aura.png" alt="Mahakal Tours sedan" /></div>
+            <div className="routes-hero-proof">
+              <CheckCircle2 size={17} />
+              <div><strong>Transparent pricing</strong><span>Fare confirmed before booking</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -134,6 +137,8 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
               </div>
               <div className="cab-results-summary"><strong>{trip}</strong><span>{date ? `${date}${time ? ` · ${time}` : ""}` : "Flexible travel plans"}</span></div>
             </div>
+
+            <div className="results-helper"><CheckCircle2 size={15} /><span>All vehicles include AC, clean interiors and professional driver support.</span><strong>Prices shown per km</strong></div>
 
             <div className="cab-filters" role="tablist" aria-label="Filter available cabs">
               {["All", "Sedan", "SUV", "Large SUV", "Traveller"].map((filter) => (
@@ -197,6 +202,13 @@ ${booking.note ? `📝 Additional Requirement: ${booking.note}\n` : ""}
           <div className="fare-important-note"><strong>Important:</strong> Toll, parking and other applicable charges are extra as mentioned above. Please confirm the final fare at the time of booking.</div>
         </div>
       </section>
+
+      <div className="mobile-bar routes-mobile-bar" aria-label="Quick booking actions">
+        <div className="mobile-bar-inner">
+          <a href="tel:+919011776333" className="mobile-call"><Phone size={17} />Call</a>
+          <button className="mobile-book" type="button" onClick={() => bookRoute("a cab for my journey")}><MessageCircle size={17} />Get a Quote</button>
+        </div>
+      </div>
 
       {showBookingForm && (
         <div className="booking-overlay">

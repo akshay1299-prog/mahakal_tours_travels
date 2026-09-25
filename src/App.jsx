@@ -23,6 +23,20 @@ function App() {
 
   return (
     <BrowserRouter>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Mahakal Tours and Travels",
+          description: "Cab booking and chauffeur-driven travel service from Ahilyanagar across Maharashtra.",
+          url: "https://mahakaltours.com/",
+          telephone: "+919011776333",
+          image: "https://mahakaltours.com/mahakallogo1.png",
+          priceRange: "₹₹",
+          areaServed: ["Ahilyanagar", "Pune", "Mumbai", "Nashik", "Shirdi", "Maharashtra"],
+          serviceType: ["One way cab", "Round trip cab", "Local car rental", "Airport transfer"],
+        })}
+      </script>
       {showWelcome && (
         <div className="welcome-screen" role="status" aria-live="polite">
           <div className="welcome-glow" />

@@ -40,6 +40,26 @@ const services = [
   { title: "Airport Transfers", text: "Smooth pickup and drop service for airports.", icon: Wind },
 ];
 
+const reviews = [
+  {
+    quote: "Comfortable car, polite driver and smooth booking experience.",
+    name: "Customer feedback",
+    trip: "Outstation journey · Family trip",
+  },
+  {
+    quote: "The pickup was on time and the fare was clearly explained before the trip.",
+    name: "Customer feedback",
+    trip: "Airport transfer · On-time pickup",
+  },
+  {
+    quote: "Clean vehicle and dependable service for our family tour.",
+    name: "Customer feedback",
+    trip: "Family tour · Comfortable vehicle",
+  },
+];
+
+const popularRoutes = ["Pune", "Mumbai", "Shirdi", "Nashik"];
+
 /* ================= WHATSAPP ================= */
 
 const sendWhatsApp = (message) => {
@@ -90,6 +110,14 @@ const Home = ({ showFares = true }) => {
     }));
   };
 
+  const swapRoute = () => {
+    setQuickSearch((prev) => ({
+      ...prev,
+      pickup: prev.destination,
+      destination: prev.pickup,
+    }));
+  };
+
   const handleQuickSearch = (e) => {
     e.preventDefault();
 
@@ -102,6 +130,20 @@ const Home = ({ showFares = true }) => {
     });
 
     navigate(`/routes?${params.toString()}`);
+  };
+
+  const explorePopularRoute = (destination) => {
+    const params = new URLSearchParams({
+      pickup: "Ahilyanagar",
+      destination,
+      trip: "One Way",
+    });
+
+    navigate(`/routes?${params.toString()}`);
+  };
+
+  const exploreRoundTrip = () => {
+    navigate("/routes?trip=Round+Trip");
   };
 
   /* ================= FORM CHANGE ================= */
@@ -273,9 +315,15 @@ const Home = ({ showFares = true }) => {
                 <ArrowRight size={17} />
               </button>
 
-              <a href="/routes" className="hero-secondary">
+              <button
+                type="button"
+                className="hero-secondary"
+                onClick={() => {
+                  window.location.assign("/routes");
+                }}
+              >
                 Explore Our Cars
-              </a>
+              </button>
             </div>
 
             <div className="hero-stats">
@@ -313,6 +361,14 @@ const Home = ({ showFares = true }) => {
             </div>
           </div>
 
+          <div className="route-search-steps" aria-label="Booking steps">
+            <span><b>01</b> Enter route</span>
+            <i />
+            <span><b>02</b> Choose a cab</span>
+            <i />
+            <span><b>03</b> Confirm on WhatsApp</span>
+          </div>
+
           <div className="route-search-tabs" role="tablist" aria-label="Trip type">
             {["One Way", "Round Trip", "Local", "Airport"].map((type) => (
               <button
@@ -332,7 +388,7 @@ const Home = ({ showFares = true }) => {
 
           <form className="route-search-form" onSubmit={handleQuickSearch}>
             <label className="route-search-field">
-              <span><MapPin size={14} /> From</span>
+              <span className="route-search-label route-search-label--from"><MapPin size={14} /> Pickup from</span>
               <input
                 name="pickup"
                 value={quickSearch.pickup}
@@ -342,8 +398,18 @@ const Home = ({ showFares = true }) => {
               />
             </label>
 
+            <button
+              className="route-swap-button"
+              type="button"
+              onClick={swapRoute}
+              aria-label="Swap pickup and destination"
+              title="Swap pickup and destination"
+            >
+              <ArrowDownUp size={16} />
+            </button>
+
             <label className="route-search-field">
-              <span><MapPin size={14} /> To</span>
+              <span className="route-search-label route-search-label--to"><MapPin size={14} /> Drop at</span>
               <input
                 name="destination"
                 value={quickSearch.destination}
@@ -381,6 +447,35 @@ const Home = ({ showFares = true }) => {
               Explore cabs
             </button>
           </form>
+        </div>
+      </section>
+
+      <section className="popular-routes-section" aria-labelledby="popular-routes-title">
+        <div className="container popular-routes-inner">
+          <div className="popular-routes-copy">
+            <span className="kicker">Popular Routes</span>
+            <div className="popular-routes-title-row">
+              <h2 id="popular-routes-title">Start with a popular destination.</h2>
+              <button className="popular-return-button" type="button" onClick={exploreRoundTrip}>
+                <ArrowDownUp size={14} />
+                Round Trip
+              </button>
+            </div>
+          </div>
+          <div className="popular-routes-list">
+            {popularRoutes.map((destination) => (
+              <button
+                className="popular-route-card"
+                key={destination}
+                type="button"
+                onClick={() => explorePopularRoute(destination)}
+              >
+                <span>Ahilyanagar</span>
+                <ArrowRight size={14} aria-hidden="true" />
+                <strong>{destination}</strong>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -751,6 +846,38 @@ const Home = ({ showFares = true }) => {
               Mahakal Tours and Travels
               <strong>Your Journey, Our Responsibility.</strong>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="reviews-section section" aria-labelledby="reviews-title">
+        <div className="container">
+          <div className="reviews-heading">
+            <div>
+              <div className="kicker">Customer Reviews</div>
+              <h2 id="reviews-title">Travel with <span>confidence.</span></h2>
+              <p>Comfort, punctuality and helpful service are what we focus on for every journey.</p>
+            </div>
+            <div className="rating-card">
+              <div className="rating-score"><strong>4.9</strong><span>/ 5</span></div>
+              <div className="rating-summary"><span className="rating-stars" aria-label="Five star rating">★★★★★</span><small>Customer feedback</small></div>
+              <div className="rating-bars" aria-label="Rating highlights">
+                <span><b>Comfort</b><i><em style={{ width: "96%" }} /></i></span>
+                <span><b>Drivers</b><i><em style={{ width: "94%" }} /></i></span>
+                <span><b>Support</b><i><em style={{ width: "95%" }} /></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div className="reviews-grid">
+            {reviews.map((review) => (
+              <article className="review-card" key={review.quote}>
+                <div className="review-stars" aria-hidden="true">★★★★★</div>
+                <span className="review-quote-mark">“</span>
+                <blockquote>“{review.quote}”</blockquote>
+                <div className="review-author"><strong>{review.name}</strong><span>{review.trip}</span></div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
